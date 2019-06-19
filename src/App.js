@@ -2,7 +2,24 @@ import React from 'react';
 import "./styles/styles.scss";
 import Curso from './Curso'
 
-function App() {
+const cursos = [
+  {
+    "titulo": "React desde cero",
+    "image": "https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20desde%20cero%20%281%29.png",
+    "price": "30",
+    "profesor": "Beto Quiroga"
+  },
+  {
+    "titulo": "HTML desde cero 2018",
+    "image": "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/HTML-2018.jpg?itok=Gyvm-W9t",
+    "price": "20",
+    "profesor": "Alvaro Felipe"
+  },
+  {},
+  {}
+]
+
+const App = () => {
   return (
     <>
       <div className="main-banner img-container l-section" id="main-banner">
@@ -19,14 +36,9 @@ function App() {
       </div>
 
       <div className="ed-grid m-grid-3">
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
-        <Curso />
+        {
+          cursos.map( c => <Curso title={c.titulo} image={c.image} price={c.price} profesor={c.profesor}/>)
+        }
       </div>
       
     </>
